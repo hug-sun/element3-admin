@@ -1,5 +1,5 @@
 {
-  "name": "element3-admin-template",
+  "name": "element3-admin",
   "version": "0.1.0",
   "scripts": {
     "dev": "vue-cli-service serve",
