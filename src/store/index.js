@@ -8,9 +8,9 @@ const store = new Vuex.Store({
   modules: {
     app,
     settings,
-    user
+    user,
   },
-  getters
+  getters,
 })
 
 export default store

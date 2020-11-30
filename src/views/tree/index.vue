@@ -9,7 +9,7 @@
     <el-tree
       ref="tree"
       :data="data"
-      :defaultNodeKey="defaultNodeKey"
+      :default-node-key="defaultNodeKey"
       :filter-node-method="filterNode"
       class="filter-tree"
       default-expand-all
@@ -80,7 +80,7 @@ export default {
   },
   watch: {
     filterText(val) {
-      this.$refs.tree.filter((node) => {
+      this.$refs.tree.filter(node => {
         return this.filterNode(val, node)
       })
     },

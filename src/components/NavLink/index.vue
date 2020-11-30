@@ -2,12 +2,17 @@
   <a v-if="isExternalLink" v-bind="$attrs" :href="to" target="_blank">
     <slot />
   </a>
-  <router-link v-else v-bind="$props" custom v-slot="{ isActive, href, navigate }">
+  <router-link
+    v-else
+    v-slot="{ isActive, href, navigate }"
+    v-bind="$props"
+    custom
+  >
     <a
       v-bind="$attrs"
       :href="href"
-      @click="navigate"
       :class="isActive ? activeClass : inactiveClass"
+      @click="navigate"
     >
       <slot />
     </a>
@@ -23,7 +28,10 @@ export default {
   props: {
     // add @ts-ignore if using TypeScript
     ...RouterLink.props,
-    inactiveClass: String,
+    inactiveClass: {
+      type: String,
+      default: '',
+    },
   },
 
   computed: {
