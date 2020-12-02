@@ -2,6 +2,7 @@
   "name": "element3-admin-template",
   "version": "0.1.0",
   "scripts": {
+    "start":"npm run serve",
     "serve": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
