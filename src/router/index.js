@@ -49,7 +49,7 @@ export const constantRoutes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard', icon: 'dashboard' },
+        meta: { title: 'Dashboard', icon: 'dashboard', affix: true },
       },
     ],
   },
@@ -163,6 +163,10 @@ export const constantRoutes = [
 
   // 404 page must be placed at the end !!!
   { path: '/:pathMatch(.*)*', name: 'not-found', redirect: '/404', hidden: true },
+]
+
+export const asyncRoutes = [
+  
 ]
 
 const getRouter = () =>
