@@ -15,10 +15,12 @@
     "axios": "0.18.1",
     "core-js": "3.6.5",
     "element3": "0.0.25",
+    "fuse.js": "^6.4.3",
     "js-cookie": "2.2.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
+    "screenfull": "^5.0.2",
     "vue": "^3.0.2",
     "vue-router": "^4.0.0-rc.1",
     "vuex": "^4.0.0-rc.1"

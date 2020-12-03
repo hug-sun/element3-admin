@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     visitedViews() {
-      return this.$store.state.tagsView.visitedViews
+      return this.$store.state.tagsView.visitedViews 
     },
     routes() {
       return this.$store.state.permission.routes
@@ -186,7 +186,7 @@ export default {
 
       this.top = e.clientY
       this.visible = true
-      this.selectedTag = tag
+      this.selectedTag = tag 
     },
     closeMenu() {
       this.visible = false
