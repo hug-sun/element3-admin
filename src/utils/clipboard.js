@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Clipboard from 'clipboard'
+import { useMessage } from 'element3'
 
+const Message = useMessage()
 function clipboardSuccess() {
-  Vue.prototype.$message({
+  Message({
     message: 'Copy successfully',
     type: 'success',
     duration: 1500
@@ -10,7 +12,7 @@ function clipboardSuccess() {
 }
 
 function clipboardError() {
-  Vue.prototype.$message({
+  Message({
     message: 'Copy failed',
     type: 'error'
   })
