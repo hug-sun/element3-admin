@@ -16,6 +16,7 @@
     "axios": "0.18.1",
     "clipboard": "^2.0.6",
     "core-js": "3.6.5",
+    "echarts": "4.2.1",
     "element3": "0.0.25",
     "fuse.js": "^6.4.3",
     "js-cookie": "2.2.0",
@@ -24,6 +25,7 @@
     "path-to-regexp": "2.4.0",
     "screenfull": "^5.0.2",
     "vue": "^3.0.2",
+    "vue-count-to": "^1.0.13",
     "vue-router": "^4.0.0-rc.1",
     "vuex": "^4.0.0-rc.1"
   },
