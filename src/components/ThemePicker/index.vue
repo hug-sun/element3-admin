@@ -50,7 +50,7 @@ export default {
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))
 
       const $message = Message({
-        message: '  Compiling the theme',
+        message: 'Compiling the theme',
         customClass: 'theme-message',
         type: 'success',
         duration: 0,

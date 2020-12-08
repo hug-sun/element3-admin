@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Layout from '@/layout'
 
 /* Router Modules */
-// import componentsRouter from './modules/components'
+import componentsRouter from './modules/components'
 // import chartsRouter from './modules/charts'
 // import tableRouter from './modules/table'
 // import nestedRouter from './modules/nested'
@@ -50,7 +50,7 @@ export const constantRoutes = [
   {
     path: '/login',
     component: () => import('@/views/login/index'),
-    hidden: true
+    hidden: true,
   },
   // {
   //   path: '/auth-redirect',
@@ -76,9 +76,9 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
-      }
-    ]
+        meta: { title: 'Dashboard', icon: 'dashboard', affix: true },
+      },
+    ],
   },
   // {
   //   path: '/documentation',
@@ -127,10 +127,12 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/icons/index'),
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
-      }
-    ]
+        meta: { title: 'Icons', icon: 'icon', noCache: true },
+      },
+    ],
   },
+  // todo 应放在异步路由，权限暂没弄好，先在这里测试
+  componentsRouter,
 ]
 
 /**
@@ -188,13 +190,13 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/icons/index'),
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
-      }
-    ]
+        meta: { title: 'Icons', icon: 'icon', noCache: true },
+      },
+    ],
   },
 
   // /** when your routing map is too long, you can split it into small modules **/
-  // componentsRouter,
+  componentsRouter,
   // chartsRouter,
   // nestedRouter,
   // tableRouter,
