@@ -48,12 +48,12 @@ const componentsRouter = {
     //   name: 'DropzoneDemo',
     //   meta: { title: 'Dropzone' }
     // },
-    // {
-    //   path: 'sticky',
-    //   component: () => import('@/views/components-demo/sticky'),
-    //   name: 'StickyDemo',
-    //   meta: { title: 'Sticky' }
-    // },
+    {
+      path: 'sticky',
+      component: () => import('@/views/components-demo/sticky'),
+      name: 'StickyDemo',
+      meta: { title: 'Sticky' }
+    },
     // {
     //   path: 'count-to',
     //   component: () => import('@/views/components-demo/count-to'),
