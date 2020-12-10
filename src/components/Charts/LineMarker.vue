@@ -34,7 +34,7 @@ export default {
   mounted() {
     this.initChart()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     if (!this.chart) {
       return
     }
