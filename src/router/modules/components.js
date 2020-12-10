@@ -60,12 +60,12 @@ const componentsRouter = {
     //   name: 'CountToDemo',
     //   meta: { title: 'Count To' }
     // },
-    // {
-    //   path: 'mixin',
-    //   component: () => import('@/views/components-demo/mixin'),
-    //   name: 'ComponentMixinDemo',
-    //   meta: { title: 'Component Mixin' }
-    // },
+    {
+      path: 'mixin',
+      component: () => import('@/views/components-demo/mixin'),
+      name: 'ComponentMixinDemo',
+      meta: { title: 'Component Mixin' }
+    },
     {
       path: 'back-to-top',
       component: () => import('@/views/components-demo/back-to-top'),
