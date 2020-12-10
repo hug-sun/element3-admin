@@ -90,12 +90,12 @@ const componentsRouter = {
       name: 'DndListDemo',
       meta: { title: 'Dnd List' }
     },
-    // {
-    //   path: 'drag-kanban',
-    //   component: () => import('@/views/components-demo/drag-kanban'),
-    //   name: 'DragKanbanDemo',
-    //   meta: { title: 'Drag Kanban' }
-    // }
+    {
+      path: 'drag-kanban',
+      component: () => import('@/views/components-demo/drag-kanban'),
+      name: 'DragKanbanDemo',
+      meta: { title: 'Drag Kanban' }
+    }
   ]
 }
 
