@@ -4,17 +4,16 @@
 
 <script>
 // deps for editor
-import 'codemirror/lib/codemirror.css' // codemirror
-import 'tui-editor/dist/tui-editor.css' // editor ui
-import 'tui-editor/dist/tui-editor-contents.css' // editor content
+import 'codemirror/lib/codemirror.css'; // Editor's Dependency Style
+import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
-import Editor from 'tui-editor'
+import Editor from '@toast-ui/editor';
 import defaultOptions from './default-options'
 
 export default {
   name: 'MarkdownEditor',
   props: {
-    modelValue: {
+    value: {
       type: String,
       default: ''
     },
@@ -61,9 +60,10 @@ export default {
     }
   },
   watch: {
-    modelValue(newValue, preValue) {
-      if (newValue !== preValue && newValue !== this.editor.getValue()) {
-        this.editor.setValue(newValue)
+    value(newValue, preValue) {
+      // console.log("this.editor.getValue()",this.editor.getValue())
+      if (newValue !== preValue && newValue !== this.editor.getMarkdown()) {
+        this.editor.setMarkdown(newValue)
       }
     },
     language(val) {
@@ -89,11 +89,11 @@ export default {
         el: document.getElementById(this.id),
         ...this.editorOptions
       })
-      if (this.modelValue) {
-        this.editor.setValue(this.modelValue)
+      if (this.value) {
+        this.editor.setMarkdown(this.value)
       }
       this.editor.on('change', () => {
-        this.$emit('update:modelValue', this.editor.getValue())
+        this.$emit('update:modelValue', this.editor.getMarkdown())
       })
     },
     destroyEditor() {
@@ -101,15 +101,15 @@ export default {
       this.editor.off('change')
       this.editor.remove()
     },
-    setValue(modelValue) {
-      this.editor.setValue(modelValue)
+    setMarkdown(value) {
+      this.editor.setMarkdown(value)
     },
-    getValue() {
-      return this.editor.getValue()
+    getMarkdown() {
+      return this.editor.getMarkdown()
     },
-    // setHtml(value) {
-    //   this.editor.setHtml(value)
-    // },
+    setHtml(value) {
+      this.editor.setHtml(value)
+    },
     getHtml() {
       return this.editor.getHtml()
     }
