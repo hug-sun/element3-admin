@@ -17,7 +17,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { Message } from 'element3'
+=======
+// import { useMessage } from 'element3'
+>>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
 
 // const Message = useMessage()
 export default {
@@ -41,7 +45,7 @@ export default {
       this.$ELEMENT.size = size
       this.$store.dispatch('app/setSize', size)
       this.refreshView()
-      Message({
+      this.$message({
         message: 'Switch Size Success',
         type: 'success',
       })

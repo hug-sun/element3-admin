@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { Message } from 'element3'
+// import { useMessage } from 'element3'
 // const Message = useMessage()
 export default {
   data() {
@@ -77,10 +77,10 @@ export default {
   },
   methods: {
     onSubmit() {
-      Message('submit!')
+      this.$message('submit!')
     },
     onCancel() {
-      Message({
+      this.$message({
         message: 'cancel!',
         type: 'warning',
       })

@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       $_sidebarElm: null,
-      $_resizeHandler: null
+      $_resizeHandler: null,
     }
   },
   mounted() {
@@ -19,7 +19,7 @@ export default {
     // when keep-alive chart activated, auto resize
     this.resize()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.destroyListener()
   },
   deactivated() {
@@ -51,6 +51,6 @@ export default {
     resize() {
       const { chart } = this
       chart && chart.resize()
-    }
-  }
+    },
+  },
 }

@@ -44,7 +44,7 @@ const STORAGE_KEY = 'todos'
 const filters = {
   all: todos => todos,
   active: todos => todos.filter(todo => !todo.done),
-  completed: todos => todos.filter(todo => todo.done)
+  completed: todos => todos.filter(todo => todo.done),
 }
 const defalutList = [
   { text: 'star this repository', done: false },
@@ -54,7 +54,7 @@ const defalutList = [
   { text: 'vue', done: true },
   { text: 'element-ui', done: true },
   { text: 'axios', done: true },
-  { text: 'webpack', done: true }
+  { text: 'webpack', done: true },
 ]
 export default {
   components: { Todo },
@@ -67,7 +67,7 @@ export default {
       visibility: 'all',
       filters,
       // todos: JSON.parse(window.localStorage.getItem(STORAGE_KEY)) || defalutList
-      todos: defalutList
+      todos: defalutList,
     }
   },
   computed: {
@@ -80,14 +80,14 @@ export default {
     remaining() {
       return this.todos.filter(todo => !todo.done).length
     },
-    pluralize(n,w){
+    pluralize(n, w) {
       return n === 1 ? w : w + 's'
     },
-    //暂时去掉这个过滤器
-    capitalize(s){
-      console.log(2222,s);
+    // 暂时去掉这个过滤器
+    capitalize(s) {
+      console.log(2222, s)
       return s.charAt(0).toUpperCase() + s.slice(1)
-    }
+    },
   },
   methods: {
     setLocalStorage() {
@@ -98,7 +98,7 @@ export default {
       if (text.trim()) {
         this.todos.push({
           text,
-          done: false
+          done: false,
         })
         this.setLocalStorage()
       }
@@ -125,8 +125,8 @@ export default {
         todo.done = done
         this.setLocalStorage()
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

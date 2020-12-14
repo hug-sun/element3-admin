@@ -17,9 +17,9 @@ export default {
 
     if (icon) {
       if (icon.includes('el-icon')) {
-        if(icon === 'el-icon-s-help'){
+        if (icon === 'el-icon-s-help') {
           vnodes.push(<i class={[icon, 'sub-el-icon']} style={'width:18px'} />)
-        }else{
+        } else {
           vnodes.push(<i class={[icon, 'sub-el-icon']} />)
         }
       } else {
@@ -28,7 +28,7 @@ export default {
     }
 
     if (title) {
-      vnodes.push(<span slot="title">{title}</span>)
+      vnodes.push(<span slot='title'>{title}</span>)
     }
     return vnodes
   },

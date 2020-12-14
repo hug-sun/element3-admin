@@ -9,14 +9,14 @@ const tableRouter = {
   name: 'Table',
   meta: {
     title: 'Table',
-    icon: 'table'
+    icon: 'table',
   },
   children: [
     {
       path: 'dynamic-table',
       component: () => import('@/views/table/dynamic-table/index'),
       name: 'DynamicTable',
-      meta: { title: 'Dynamic Table' }
+      meta: { title: 'Dynamic Table' },
     },
     // {
     //   path: 'drag-table',

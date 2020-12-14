@@ -5,7 +5,7 @@
       icon-class="search"
       @click.stop="click"
     />
-    
+
     <el-select
       ref="headerSearchSelect"
       v-model="search"
@@ -17,7 +17,7 @@
       class="header-search-select"
       @change="change"
     >
-    
+
       <el-option
         v-for="item in options"
         :key="item.path"
@@ -68,7 +68,7 @@ export default {
   },
   mounted() {
     // todo 待权限完成测试功能
-    console.log("this.routes",this.$store.getters.permission_routes)
+    console.log('this.routes', this.$store.getters.permission_routes)
     this.searchPool = this.generateRoutes(this.routes)
   },
   methods: {
@@ -142,7 +142,7 @@ export default {
           const tempRoutes = this.generateRoutes(
             router.children,
             data.path,
-            data.title
+            data.title,
           )
           if (tempRoutes.length >= 1) {
             res = [...res, ...tempRoutes]

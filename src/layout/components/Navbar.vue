@@ -14,7 +14,7 @@
 
         <el-tooltip content="Global Size" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
-        </el-tooltip> 
+        </el-tooltip>
 
       </template>
 
@@ -60,14 +60,14 @@ export default {
     ErrorLog,
     Screenfull,
     SizeSelect,
-    Search
+    Search,
   },
   computed: {
     ...mapGetters([
       'sidebar',
       'avatar',
-      'device'
-    ])
+      'device',
+    ]),
   },
   methods: {
     toggleSideBar() {
@@ -76,8 +76,8 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
-    }
-  }
+    },
+  },
 }
 </script>
 
