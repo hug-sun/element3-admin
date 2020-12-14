@@ -152,19 +152,19 @@ export const constantRoutes = [
         name: 'CreateArticle',
         meta: { title: 'Create Article', icon: 'edit' }
       },
-      // {
-      //   path: 'edit/:id(\\d+)',
-      //   component: () => import('@/views/example/edit'),
-      //   name: 'EditArticle',
-      //   meta: { title: 'Edit Article', noCache: true, activeMenu: '/example/list' },
-      //   hidden: true
-      // },
-      // {
-      //   path: 'list',
-      //   component: () => import('@/views/example/list'),
-      //   name: 'ArticleList',
-      //   meta: { title: 'Article List', icon: 'list' }
-      // }
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/example/edit'),
+        name: 'EditArticle',
+        meta: { title: 'Edit Article', noCache: true, activeMenu: '/example/list' },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/example/list'),
+        name: 'ArticleList',
+        meta: { title: 'Article List', icon: 'list' }
+      }
     ]
   },
 ]
