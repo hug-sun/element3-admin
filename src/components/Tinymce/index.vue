@@ -16,11 +16,7 @@ import editorImage from './components/EditorImage'
 import plugins from './plugins'
 import toolbar from './toolbar'
 import load from './dynamicLoadScript'
-<<<<<<< HEAD
-import { Message } from 'element3'
-=======
 // import { useMessage } from 'element3'
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
 
 // const Message = useMessage()
 // why use this cdn, detail see https://github.com/PanJiaChen/tinymce-all-in-one

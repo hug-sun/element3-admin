@@ -13,21 +13,12 @@
     "test:ci": "npm run lint && npm run test:unit"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "axios": "0.18.1",
-    "clipboard": "^2.0.6",
-    "core-js": "3.6.5",
-    "echarts": "4.2.1",
-    "element3": "0.0.29",
-    "file-saver": "^2.0.5",
-=======
     "@toast-ui/editor": "^2.5.1",
     "axios": "0.18.1",
     "clipboard": "^2.0.6",
     "core-js": "3.6.5",
     "echarts": "^4.2.1",
     "element3": "0.0.30",
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
     "fuse.js": "^6.4.3",
     "js-cookie": "2.2.0",
     "jsonlint": "^1.6.3",
@@ -35,15 +26,6 @@
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "screenfull": "^5.0.2",
-<<<<<<< HEAD
-    "sortablejs": "^1.12.0",
-    "tui-editor": "1.3.3",
-    "vue": "^3.0.2",
-    "vue-count-to": "^1.0.13",
-    "vue-router": "^4.0.0-rc.1",
-    "vuex": "^4.0.0-rc.1",
-    "xlsx": "^0.16.9"
-=======
     "script-loader": "^0.7.2",
     "sortablejs": "^1.12.0",
     "vue": "^3.0.2",
@@ -51,8 +33,8 @@
     "vue-router": "^4.0.0-rc.1",
     "vue-splitpane": "^1.0.6",
     "vuedraggable": "^4.0.1",
-    "vuex": "^4.0.0-rc.1"
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
+    "vuex": "^4.0.0-rc.1",
+    "xlsx": "^0.16.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

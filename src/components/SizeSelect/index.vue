@@ -17,11 +17,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { Message } from 'element3'
-=======
 // import { useMessage } from 'element3'
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
 
 // const Message = useMessage()
 export default {

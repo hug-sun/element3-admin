@@ -8,11 +8,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { Message } from 'element3'
-=======
 // import { useMessage } from 'element3'
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
 
 // const Message = useMessage()
 const version = require('element3/package.json').version // element3 version from node_modules
@@ -53,11 +49,7 @@ export default {
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))
 
-<<<<<<< HEAD
       Message({
-=======
-      const $message = this.$message({
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
         message: 'Compiling the theme',
         customClass: 'theme-message',
         type: 'success',
@@ -114,13 +106,8 @@ export default {
       })
 
       this.$emit('change', val)
-<<<<<<< HEAD
      // todo close方法待element3重构
       Message.close
-=======
-      // todo close方法待element3重构
-    //   $message.close
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
     },
   },
 

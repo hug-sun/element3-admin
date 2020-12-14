@@ -3,11 +3,7 @@ import { useMsgbox, Message } from 'element3'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
-<<<<<<< HEAD
 // const Message = useMessage()
-=======
-const message = Message()
->>>>>>> 53f52cad70b97fdc48387c81f6d6723ba34b58e7
 const Msgbox = useMsgbox()
 // create an axios instance
 const service = axios.create({
