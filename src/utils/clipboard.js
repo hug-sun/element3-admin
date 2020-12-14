@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Clipboard from 'clipboard'
-import { useMessage } from 'element3'
+import { Message } from 'element3'
 
-const Message = useMessage()
+// const Message = useMessage()
 function clipboardSuccess() {
   Message({
     message: 'Copy successfully',

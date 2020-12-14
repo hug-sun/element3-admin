@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { useMsgbox, useMessage } from 'element3'
+import { useMsgbox, Message } from 'element3'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
-const Message = useMessage()
+// const Message = useMessage()
 const Msgbox = useMsgbox()
 // create an axios instance
 const service = axios.create({

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import { useMessage } from 'element3'
+import { Message } from 'element3'
 
-const Message = useMessage()
+// const Message = useMessage()
 const version = require('element3/package.json').version // element3 version from node_modules
 const ORIGINAL_THEME = '#409EFF' // default color
 
@@ -49,7 +49,7 @@ export default {
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))
 
-      const $message = Message({
+      Message({
         message: 'Compiling the theme',
         customClass: 'theme-message',
         type: 'success',
@@ -107,7 +107,7 @@ export default {
 
       this.$emit('change', val)
      // todo close方法待element3重构
-    //   $message.close
+      Message.close
     },
   },
 

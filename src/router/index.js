@@ -6,7 +6,7 @@ import Layout from '@/layout'
 /* Router Modules */
 import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
-// import tableRouter from './modules/table'
+import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
 
 /**
@@ -134,6 +134,7 @@ export const constantRoutes = [
   // todo 应放在异步路由，权限暂没弄好，先在这里测试
   componentsRouter,
   chartsRouter,
+  tableRouter,
   nestedRouter
 ]
 

@@ -1,6 +1,6 @@
 import router from './router'
 import store from './store'
-import { useMessage } from 'element3'
+import { Message } from 'element3'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken } from '@/utils/auth' // get token from cookie
@@ -36,7 +36,7 @@ router.beforeEach(async(to, from, next) => {
 
           next()
         } catch (error) {
-          const Message = useMessage()
+          // const Message = useMessage()
           // remove token and go to login page to re-login
           await store.dispatch('user/resetToken')
           Message.error(error || 'Has Error')

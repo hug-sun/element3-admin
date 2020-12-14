@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import { useMessage } from 'element3'
+import { Message } from 'element3'
 
-const Message = useMessage()
+// const Message = useMessage()
 export default {
   data() {
     return {
