@@ -26,7 +26,7 @@
           </el-input>
         </el-dropdown-menu>
       </el-dropdown>
-     // todo el-date-picker未修复   字体大小
+      // todo el-date-picker未修复   字体大小
       <!-- <div class="time-container">
         <el-date-picker v-model="time" type="datetime" format="yyyy-MM-dd HH:mm:ss" placeholder="Release time" />
       </div> -->
@@ -112,15 +112,15 @@ export default {
       platformsOptions: [
         { key: 'a-platform', name: 'platformA' },
         { key: 'b-platform', name: 'platformB' },
-        { key: 'c-platform', name: 'platformC' }
+        { key: 'c-platform', name: 'platformC' },
       ],
       pickerOptions: {
         disabledDate(time) {
           return time.getTime() > Date.now()
-        }
-      }
+        },
+      },
     }
-  }
+  },
 }
 </script>
 

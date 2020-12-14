@@ -1,5 +1,5 @@
 <template>
-  <el-select ref="dragSelect" v-model="selectVal" v-bind="$attrs" class="drag-select" multiple >
+  <el-select ref="dragSelect" v-model="selectVal" v-bind="$attrs" class="drag-select" multiple>
     <slot />
   </el-select>
 </template>
@@ -12,8 +12,8 @@ export default {
   props: {
     modelValue: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     selectVal: {
@@ -22,8 +22,8 @@ export default {
       },
       set(val) {
         this.$emit('update:modelValue', [...val])
-      }
-    }
+      },
+    },
   },
   mounted() {
     this.setSort()
@@ -41,10 +41,10 @@ export default {
         onEnd: evt => {
           const targetRow = this.modelValue.splice(evt.oldIndex, 1)[0]
           this.modelValue.splice(evt.newIndex, 0, targetRow)
-        }
+        },
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

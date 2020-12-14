@@ -3,8 +3,8 @@
     <div :style="{ width: width1 }" class="dndList-list">
       <h3>{{ list1Title }}</h3>
       <draggable
-        :set-data="setData"
         v-model="list1"
+        :set-data="setData"
         group="article"
         class="dragArea"
         item-key="id"

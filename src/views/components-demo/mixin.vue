@@ -2,6 +2,7 @@
   <div class="mixin-components-container">
     <el-row>
       <el-card class="box-card">
+          // todo slot改法
         <div slot="header" class="clearfix">
           <span>Buttons</span>
         </div>
@@ -27,9 +28,9 @@
             </router-link>
           </el-col>
           <el-col :span="4" class="text-center">
-            <router-link class="pan-btn tiffany-btn" to="/example/create">
+            <!-- <router-link class="pan-btn tiffany-btn" to="/example/create">
               Form
-            </router-link>
+            </router-link> -->
           </el-col>
           <el-col :span="4" class="text-center">
             <router-link class="pan-btn yellow-btn" to="/theme/index">
@@ -47,7 +48,7 @@
             <span>Material Design 的input</span>
           </div>
           <div style="height:100px;">
-              // todo 校验不生效
+            // todo 校验不生效
             <el-form :model="demo" :rules="demoRules">
               <el-form-item prop="title">
                 <md-input v-model="demo.title" icon="el-icon-search" name="title" placeholder="输入标题">
@@ -78,7 +79,7 @@
             <span>水波纹 waves v-directive</span>
           </div>
           <div class="component-item">
-              // todo 指令修改
+            // todo 指令修改
             <!-- <el-button v-waves type="primary">
               水波纹效果
             </el-button> -->
@@ -126,11 +127,11 @@ export default {
     PanThumb,
     MdInput,
     Mallki,
-    DropdownMenu
+    DropdownMenu,
   },
-//   directives: {
-//     waves
-//   },
+  //   directives: {
+  //     waves
+  //   },
   data() {
     const validate = (rule, value, callback) => {
       if (value.length !== 6) {
@@ -141,10 +142,10 @@ export default {
     }
     return {
       demo: {
-        title: ''
+        title: '',
       },
       demoRules: {
-        title: [{ required: true, trigger: 'change', validator: validate }]
+        title: [{ required: true, trigger: 'change', validator: validate }],
       },
       articleList: [
         { title: '基础篇', href: 'https://juejin.im/post/59097cd7a22b9d0065fb61d2' },
@@ -152,10 +153,10 @@ export default {
         { title: '实战篇', href: 'https://juejin.im/post/593121aa0ce4630057f70d35' },
         { title: 'vue-admin-template 篇', href: 'https://juejin.im/post/595b4d776fb9a06bbe7dba56' },
         { title: 'v4.0 篇', href: 'https://juejin.im/post/5c92ff94f265da6128275a85' },
-        { title: '优雅的使用 icon', href: 'https://juejin.im/post/59bb864b5188257e7a427c09' }
-      ]
+        { title: '优雅的使用 icon', href: 'https://juejin.im/post/59bb864b5188257e7a427c09' },
+      ],
     }
-  }
+  },
 }
 </script>
 

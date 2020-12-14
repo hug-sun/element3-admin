@@ -14,18 +14,18 @@ export default {
   components: { adminDashboard, editorDashboard },
   data() {
     return {
-      currentRole: 'adminDashboard'
+      currentRole: 'adminDashboard',
     }
   },
   computed: {
     ...mapGetters([
-      'roles'
-    ])
+      'roles',
+    ]),
   },
   created() {
     if (!this.roles.includes('admin')) {
       this.currentRole = 'editorDashboard'
     }
-  }
+  },
 }
 </script>

@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       $_sidebarElm: null,
-      $_resizeHandler: null
+      $_resizeHandler: null,
     }
   },
   mounted() {
@@ -50,6 +50,6 @@ export default {
     },
     $_destroySidebarResizeEvent() {
       this.$_sidebarElm && this.$_sidebarElm.removeEventListener('transitionend', this.$_sidebarResizeHandler)
-    }
-  }
+    },
+  },
 }

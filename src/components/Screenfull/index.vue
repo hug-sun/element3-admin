@@ -6,15 +6,15 @@
 
 <script>
 import screenfull from 'screenfull'
-import { useMessage } from 'element3'
+// import { useMessage } from 'element3'
 
-const Message = useMessage()
+// const Message = useMessage()
 
 export default {
   name: 'Screenfull',
   data() {
     return {
-      isFullscreen: false
+      isFullscreen: false,
     }
   },
   mounted() {
@@ -26,9 +26,9 @@ export default {
   methods: {
     click() {
       if (!screenfull.isEnabled) {
-        Message({
+        this.$message({
           message: 'you browser can not work',
-          type: 'warning'
+          type: 'warning',
         })
         return false
       }
@@ -46,8 +46,8 @@ export default {
       if (screenfull.isEnabled) {
         screenfull.off('change', this.change)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

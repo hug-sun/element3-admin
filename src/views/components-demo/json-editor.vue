@@ -21,9 +21,9 @@ export default {
   components: { JsonEditor },
   data() {
     return {
-      value: JSON.parse(jsonData)
+      value: JSON.parse(jsonData),
     }
-  }
+  },
 }
 </script>
 

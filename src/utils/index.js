@@ -155,7 +155,7 @@ export function param(json) {
     Object.keys(json).map(key => {
       if (json[key] === undefined) return ''
       return encodeURIComponent(key) + '=' + encodeURIComponent(json[key])
-    })
+    }),
   ).join('&')
 }
 

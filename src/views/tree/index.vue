@@ -9,7 +9,7 @@
     <el-tree
       ref="tree"
       :data="data"
-      :defaultNodeKey="defaultNodeKey"
+      :default-node-key="defaultNodeKey"
       :filter-node-method="filterNode"
       class="filter-tree"
       default-expand-all

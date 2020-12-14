@@ -2,9 +2,10 @@
   <div class="components-container">
     <aside>
       drag-list base on
-      <a href="https://github.com/SortableJS/vue.draggable.next" target="_blank"
-        >Vue.Draggable</a
-      >
+      <a
+        href="https://github.com/SortableJS/vue.draggable.next"
+        target="_blank"
+      >Vue.Draggable</a>
     </aside>
     <div class="editor-container">
       <dnd-list list1-title="List" list2-title="Article pool" />

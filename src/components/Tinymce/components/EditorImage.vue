@@ -30,22 +30,22 @@
 </template>
 
 <script>
-import { useMessage } from 'element3'
+// import { useMessage } from 'element3'
 
-const Message = useMessage()
+// const Message = useMessage()
 export default {
   name: 'EditorSlideUpload',
   props: {
     color: {
       type: String,
-      default: '#1890ff'
-    }
+      default: '#1890ff',
+    },
   },
   data() {
     return {
       dialogVisible: false,
       listObj: {},
-      fileList: []
+      fileList: [],
     }
   },
   methods: {
@@ -55,7 +55,7 @@ export default {
     handleSubmit() {
       const arr = Object.keys(this.listObj).map(v => this.listObj[v])
       if (!this.checkAllSuccess()) {
-        Message('Please wait for all images to be uploaded successfully. If there is a network problem, please refresh the page and upload again!')
+        this.$message('Please wait for all images to be uploaded successfully. If there is a network problem, please refresh the page and upload again!')
         return
       }
       this.$emit('successCBK', arr)
@@ -97,8 +97,8 @@ export default {
         }
         resolve(true)
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

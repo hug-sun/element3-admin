@@ -23,21 +23,21 @@ export default {
       value: ['Apple', 'Banana', 'Orange'],
       options: [{
         value: 'Apple',
-        label: 'Apple'
+        label: 'Apple',
       }, {
         value: 'Banana',
-        label: 'Banana'
+        label: 'Banana',
       }, {
         value: 'Orange',
-        label: 'Orange'
+        label: 'Orange',
       }, {
         value: 'Pear',
-        label: 'Pear'
+        label: 'Pear',
       }, {
         value: 'Strawberry',
-        label: 'Strawberry'
-      }]
+        label: 'Strawberry',
+      }],
     }
-  }
+  },
 }
 </script>

@@ -18,7 +18,7 @@
     "clipboard": "^2.0.6",
     "core-js": "3.6.5",
     "echarts": "^4.2.1",
-    "element3": "0.0.25",
+    "element3": "0.0.30",
     "fuse.js": "^6.4.3",
     "js-cookie": "2.2.0",
     "jsonlint": "^1.6.3",

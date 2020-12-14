@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import { useMessage } from 'element3'
+// import { useMessage } from 'element3'
 
-const Message = useMessage()
+// const Message = useMessage()
 const version = require('element3/package.json').version // element3 version from node_modules
 const ORIGINAL_THEME = '#409EFF' // default color
 
@@ -38,7 +38,7 @@ export default {
   },
   watch: {
     defaultTheme: {
-      handler: function (val, oldVal) {
+      handler: function(val, oldVal) {
         this.theme = val
       },
       immediate: true,
@@ -49,7 +49,7 @@ export default {
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))
 
-      const $message = Message({
+      const $message = this.$message({
         message: 'Compiling the theme',
         customClass: 'theme-message',
         type: 'success',
@@ -60,12 +60,12 @@ export default {
       const getHandler = (variable, id) => {
         return () => {
           const originalCluster = this.getThemeCluster(
-            ORIGINAL_THEME.replace('#', '')
+            ORIGINAL_THEME.replace('#', ''),
           )
           const newStyle = this.updateStyle(
             this[variable],
             originalCluster,
-            themeCluster
+            themeCluster,
           )
 
           let styleTag = document.getElementById(id)
@@ -101,12 +101,12 @@ export default {
         style.innerText = this.updateStyle(
           innerText,
           originalCluster,
-          themeCluster
+          themeCluster,
         )
       })
 
       this.$emit('change', val)
-     // todo close方法待element3重构
+      // todo close方法待element3重构
     //   $message.close
     },
   },

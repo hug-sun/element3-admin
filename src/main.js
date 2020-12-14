@@ -2,8 +2,9 @@ import { createApp } from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import "element3/lib/theme-chalk/index.css"
-import Element3 from 'element3'
+import 'element3/lib/theme-chalk/index.css'
+import Element3, { Message, useNotify } from 'element3'
+
 
 // import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
@@ -41,6 +42,11 @@ const app = createApp(App)
   .use(store)
   .use(Element3)
 useIcons(app)
+
+app.config.globalProperties.$message = Message
+app.config.globalProperties.$notify = useNotify()
+
+
 app.mount('#app')
 
 app.config.globalProperties.$filters = {
@@ -67,7 +73,7 @@ app.config.globalProperties.$filters = {
       { value: 1E12, symbol: 'T' },
       { value: 1E9, symbol: 'G' },
       { value: 1E6, symbol: 'M' },
-      { value: 1E3, symbol: 'k' }
+      { value: 1E3, symbol: 'k' },
     ]
     for (let i = 0; i < si.length; i++) {
       if (num >= si[i].value) {
@@ -81,5 +87,5 @@ app.config.globalProperties.$filters = {
   },
   uppercaseFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+  },
 }
