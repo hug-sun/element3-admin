@@ -204,6 +204,18 @@ export const constantRoutes = [
           }
         ]
       },
+      {
+          path: '/error-log',
+          component: Layout,
+          children: [
+            {
+              path: 'log',
+              component: () => import('@/views/error-log/index'),
+              name: 'ErrorLog',
+              meta: { title: 'Error Log', icon: 'bug' }
+            }
+          ]
+        },
 ]
 
 /**
