@@ -17,9 +17,6 @@
 </template>
 
 <script>
-// import { useMessage } from 'element3'
-
-// const Message = useMessage()
 export default {
   data() {
     return {
