@@ -168,6 +168,16 @@ export const constantRoutes = [
       }
     ]
   },
+    {
+    path: '/external-link',
+    component: Layout,
+    children: [
+      {
+        path: 'https://github.com/hug-sun/element3-admin',
+        meta: { title: 'External Link', icon: 'link' }
+      }
+    ]
+  },
 ]
 
 /**
