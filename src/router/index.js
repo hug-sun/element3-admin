@@ -92,19 +92,19 @@ export const constantRoutes = [
   //     }
   //   ]
   // },
-  // {
-  //   path: '/guide',
-  //   component: Layout,
-  //   redirect: '/guide/index',
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/guide/index'),
-  //       name: 'Guide',
-  //       meta: { title: 'Guide', icon: 'guide', noCache: true }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/guide',
+    component: Layout,
+    redirect: '/guide/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/guide/index'),
+        name: 'Guide',
+        meta: { title: 'Guide', icon: 'guide', noCache: true }
+      }
+    ]
+  },
   // {
   //   path: '/profile',
   //   component: Layout,
@@ -252,6 +252,41 @@ export const constantRoutes = [
             }
           ]
         },
+        {
+            path: '/zip',
+            component: Layout,
+            redirect: '/zip/download',
+            alwaysShow: true,
+            name: 'Zip',
+            meta: { title: 'Zip', icon: 'zip' },
+            children: [
+              {
+                path: 'download',
+                component: () => import('@/views/zip/index'),
+                name: 'ExportZip',
+                meta: { title: 'Export Zip' }
+              }
+            ]
+          },
+        
+          {
+            path: '/pdf',
+            component: Layout,
+            redirect: '/pdf/index',
+            children: [
+              {
+                path: 'index',
+                component: () => import('@/views/pdf/index'),
+                name: 'PDF',
+                meta: { title: 'PDF', icon: 'pdf' }
+              }
+            ]
+          },
+          {
+            path: '/pdf/download',
+            component: () => import('@/views/pdf/download'),
+            hidden: true
+          },
       {
         path: '/theme',
         component: Layout,
