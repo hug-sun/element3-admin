@@ -10,7 +10,7 @@
 
       <el-table-column width="180px" align="center" label="Date">
         <template v-slot="{row}">
-          <span>{{ parseTime(row.timestamp, '{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{ $parseTime(row.timestamp, '{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
 
@@ -62,7 +62,6 @@
 </template>
 
 <script>
-import parseTime from '@/utils'
 import { fetchList } from '@/api/article'
 import Sortable from 'sortablejs'
 

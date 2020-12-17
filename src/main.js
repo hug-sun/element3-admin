@@ -4,6 +4,7 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import 'element3/lib/theme-chalk/index.css'
 import Element3, { Message, useNotify } from 'element3'
+import { parseTime } from '@/utils'
 
 
 // import ElementUI from 'element-ui'
@@ -45,6 +46,8 @@ useIcons(app)
 
 app.config.globalProperties.$message = Message
 app.config.globalProperties.$notify = useNotify()
+// 注入utils内部parseTime方法
+app.config.globalProperties.$parseTime = parseTime
 
 
 app.mount('#app')

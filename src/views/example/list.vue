@@ -9,9 +9,7 @@
 
       <el-table-column width="180px" align="center" label="Date">
         <template #="scope"> 
-          <span>{{ scope.row.timestamp }}</span>
-          // todo 全局过滤器修改
-          <!-- <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span> -->
+          <span>{{ $parseTime(scope.row.timestamp, '{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
 
