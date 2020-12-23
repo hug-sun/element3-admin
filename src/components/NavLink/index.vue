@@ -30,14 +30,14 @@ export default {
     ...RouterLink.props,
     inactiveClass: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
 
   computed: {
     isExternalLink() {
       return typeof this.to === 'string' && this.to.startsWith('http')
-    },
-  },
+    }
+  }
 }
 </script>

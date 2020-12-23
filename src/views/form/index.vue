@@ -71,8 +71,8 @@ export default {
         delivery: false,
         type: [],
         resource: '',
-        desc: '',
-      },
+        desc: ''
+      }
     }
   },
   methods: {
@@ -82,10 +82,10 @@ export default {
     onCancel() {
       Message({
         message: 'cancel!',
-        type: 'warning',
+        type: 'warning'
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

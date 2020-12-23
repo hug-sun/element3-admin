@@ -33,15 +33,15 @@ export default {
               children: [
                 {
                   id: 9,
-                  label: 'Level three 1-1-1',
+                  label: 'Level three 1-1-1'
                 },
                 {
                   id: 10,
-                  label: 'Level three 1-1-2',
-                },
-              ],
-            },
-          ],
+                  label: 'Level three 1-1-2'
+                }
+              ]
+            }
+          ]
         },
         {
           id: 2,
@@ -49,13 +49,13 @@ export default {
           children: [
             {
               id: 5,
-              label: 'Level two 2-1',
+              label: 'Level two 2-1'
             },
             {
               id: 6,
-              label: 'Level two 2-2',
-            },
-          ],
+              label: 'Level two 2-2'
+            }
+          ]
         },
         {
           id: 3,
@@ -63,19 +63,19 @@ export default {
           children: [
             {
               id: 7,
-              label: 'Level two 3-1',
+              label: 'Level two 3-1'
             },
             {
               id: 8,
-              label: 'Level two 3-2',
-            },
-          ],
-        },
+              label: 'Level two 3-2'
+            }
+          ]
+        }
       ],
       defaultNodeKey: {
         childNodes: 'children',
-        label: 'label',
-      },
+        label: 'label'
+      }
     }
   },
   watch: {
@@ -83,14 +83,14 @@ export default {
       this.$refs.tree.filter(node => {
         return this.filterNode(val, node)
       })
-    },
+    }
   },
 
   methods: {
     filterNode(value, data) {
       if (!value) return true
       return data.label.indexOf(value) !== -1
-    },
-  },
+    }
+  }
 }
 </script>

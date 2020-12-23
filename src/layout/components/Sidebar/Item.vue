@@ -4,12 +4,12 @@ export default {
   props: {
     icon: {
       type: String,
-      default: '',
+      default: ''
     },
     title: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   render() {
     const { icon, title } = this
@@ -31,7 +31,7 @@ export default {
       vnodes.push(<span slot='title'>{title}</span>)
     }
     return vnodes
-  },
+  }
 }
 </script>
 
