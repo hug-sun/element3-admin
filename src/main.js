@@ -40,5 +40,6 @@ const app = createApp(App)
   .use(router)
   .use(store)
   .use(Element3)
+
 useIcons(app)
 app.mount('#app')

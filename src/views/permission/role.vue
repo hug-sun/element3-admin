@@ -4,29 +4,29 @@
 
     <el-table :data="rolesList" style="width: 100%;margin-top:30px;" border>
       <el-table-column align="center" label="Role Key" width="220">
-        <template slot-scope="scope">
+        <template #default="scope">
           {{ scope.row.key }}
         </template>
       </el-table-column>
       <el-table-column align="center" label="Role Name" width="220">
-        <template slot-scope="scope">
+        <template #default="scope">
           {{ scope.row.name }}
         </template>
       </el-table-column>
       <el-table-column align="header-center" label="Description">
-        <template slot-scope="scope">
+        <template #default="scope">
           {{ scope.row.description }}
         </template>
       </el-table-column>
       <el-table-column align="center" label="Operations">
-        <template slot-scope="scope">
+        <template #default="scope"
           <el-button type="primary" size="small" @click="handleEdit(scope)">Edit</el-button>
           <el-button type="danger" size="small" @click="handleDelete(scope)">Delete</el-button>
         </template>
       </el-table-column>
     </el-table>
 
-    <el-dialog :visible.sync="dialogVisible" :title="dialogType==='edit'?'Edit Role':'New Role'">
+    <el-dialog v-model:visible="dialogVisible" :title="dialogType==='edit'?'Edit Role':'New Role'">
       <el-form :model="role" label-width="80px" label-position="left">
         <el-form-item label="Name">
           <el-input v-model="role.name" placeholder="Role Name" />
@@ -62,13 +62,19 @@
 <script>
 import path from 'path'
 import { deepClone } from '@/utils'
-import { getRoutes, getRoles, addRole, deleteRole, updateRole } from '@/api/role'
+import {
+  getRoutes,
+  getRoles,
+  addRole,
+  deleteRole,
+  updateRole,
+} from '@/api/role'
 
 const defaultRole = {
   key: '',
   name: '',
   description: '',
-  routes: []
+  routes: [],
 }
 
 export default {
@@ -82,14 +88,14 @@ export default {
       checkStrictly: false,
       defaultProps: {
         children: 'children',
-        label: 'title'
-      }
+        label: 'title',
+      },
     }
   },
   computed: {
     routesData() {
       return this.routes
-    }
+    },
   },
   created() {
     // Mock: get all routes and roles list from server
@@ -113,9 +119,14 @@ export default {
 
       for (let route of routes) {
         // skip some route
-        if (route.hidden) { continue }
+        if (route.hidden) {
+          continue
+        }
 
-        const onlyOneShowingChild = this.onlyOneShowingChild(route.children, route)
+        const onlyOneShowingChild = this.onlyOneShowingChild(
+          route.children,
+          route
+        )
 
         if (route.children && onlyOneShowingChild && !route.alwaysShow) {
           route = onlyOneShowingChild
@@ -123,8 +134,7 @@ export default {
 
         const data = {
           path: path.resolve(basePath, route.path),
-          title: route.meta && route.meta.title
-
+          title: route.meta && route.meta.title,
         }
 
         // recursive child routes
@@ -172,17 +182,19 @@ export default {
       this.$confirm('Confirm to remove the role?', 'Warning', {
         confirmButtonText: 'Confirm',
         cancelButtonText: 'Cancel',
-        type: 'warning'
+        type: 'warning',
       })
         .then(async () => {
           await deleteRole(row.key)
           this.rolesList.splice($index, 1)
           this.$message({
             type: 'success',
-            message: 'Delete succed!'
+            message: 'Delete succed!',
           })
         })
-        .catch(err => { console.error(err) })
+        .catch(err => {
+          console.error(err)
+        })
     },
     generateTree(routes, basePath = '/', checkedKeys) {
       const res = []
@@ -192,10 +204,17 @@ export default {
 
         // recursive child routes
         if (route.children) {
-          route.children = this.generateTree(route.children, routePath, checkedKeys)
+          route.children = this.generateTree(
+            route.children,
+            routePath,
+            checkedKeys
+          )
         }
 
-        if (checkedKeys.includes(routePath) || (route.children && route.children.length >= 1)) {
+        if (
+          checkedKeys.includes(routePath) ||
+          (route.children && route.children.length >= 1)
+        ) {
           res.push(route)
         }
       }
@@ -205,7 +224,11 @@ export default {
       const isEdit = this.dialogType === 'edit'
 
       const checkedKeys = this.$refs.tree.getCheckedKeys()
-      this.role.routes = this.generateTree(deepClone(this.serviceRoutes), '/', checkedKeys)
+      this.role.routes = this.generateTree(
+        deepClone(this.serviceRoutes),
+        '/',
+        checkedKeys
+      )
 
       if (isEdit) {
         await updateRole(this.role.key, this.role)
@@ -231,7 +254,7 @@ export default {
             <div>Role Name: ${name}</div>
             <div>Description: ${description}</div>
           `,
-        type: 'success'
+        type: 'success',
       })
     },
     // reference: src/view/layout/components/Sidebar/SidebarItem.vue
@@ -248,13 +271,13 @@ export default {
 
       // Show parent if there are no child route to display
       if (showingChildren.length === 0) {
-        onlyOneChild = { ... parent, path: '', noShowingChildren: true }
+        onlyOneChild = { ...parent, path: '', noShowingChildren: true }
         return onlyOneChild
       }
 
       return false
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,4 +1,4 @@
-# vue-admin-template
+# element3-admin
 
 > 这是一个极简的 element3 admin 管理后台模板。它只包含了 Element3 UI
 

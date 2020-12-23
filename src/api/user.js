@@ -2,23 +2,23 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
+    url: '/element3-admin/user/login',
     method: 'post',
-    data
+    data,
   })
 }
 
 export function getInfo(token) {
   return request({
-    url: '/vue-admin-template/user/info',
+    url: '/element3-admin/user/info',
     method: 'get',
-    params: { token }
+    params: { token },
   })
 }
 
 export function logout() {
   return request({
-    url: '/vue-admin-template/user/logout',
-    method: 'post'
+    url: '/element3-admin/user/logout',
+    method: 'post',
   })
 }

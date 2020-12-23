@@ -68,14 +68,11 @@ export const constantRoutes = [
   },
   {
     path: '/',
-    redirect: '/dashboard',
-  },
-  {
-    path: '/dashboard',
     component: Layout,
+    redirect: '/dashboard',
     children: [
       {
-        path: '',
+        path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true },
@@ -399,20 +396,9 @@ export const asyncRoutes = [
   },
 ]
 
-const getRouter = () =>
-  createRouter({
-    // history: createWebHistory(), // require service support
-    history: createWebHashHistory(),
-    scrollBehavior: () => ({ top: 0 }),
-    routes: constantRoutes,
-  })
-
-const router = getRouter()
-
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
-export function resetRouter() {
-  const newRouter = getRouter()
-  router.matcher = newRouter.matcher // reset router
-}
-
-export default router
+export default createRouter({
+  // history: createWebHistory(), // require service support
+  history: createWebHashHistory(),
+  scrollBehavior: () => ({ top: 0 }),
+  routes: constantRoutes,
+})

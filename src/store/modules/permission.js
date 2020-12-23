@@ -1,5 +1,5 @@
 import { asyncRoutes, constantRoutes } from '@/router'
-
+import router from '@/router'
 /**
  * Use meta.role to determine if the current user has permission
  * @param roles
@@ -37,12 +37,16 @@ export function filterAsyncRoutes(routes, roles) {
 const state = {
   routes: [],
   addRoutes: [],
+  removeRoutes: [], // 用于删除动态路由
 }
 
 const mutations = {
   SET_ROUTES: (state, routes) => {
     state.addRoutes = routes
     state.routes = constantRoutes.concat(routes)
+  },
+  SET_REMOVE_ROUTES: (state, routes) => {
+    state.removeRoutes = routes
   },
 }
 
@@ -58,6 +62,21 @@ const actions = {
       commit('SET_ROUTES', accessedRoutes)
       resolve(accessedRoutes)
     })
+  },
+  addRoutes({ commit }, accessRoutes) {
+    // 添加动态路由，同时保存移除函数，将来如果需要重置路由可以用到它们
+    const removeRoutes = []
+    accessRoutes.forEach(route => {
+      const removeRoute = router.addRoute(route)
+      removeRoutes.push(removeRoute)
+    })
+    commit('SET_REMOVE_ROUTES', removeRoutes)
+  },
+  resetRoutes({ commit, state }) {
+    // 重置路由为初始状态，用户切换角色时需要用到
+    state.removeRoutes.forEach(fn => fn())
+    // 路由数据重置
+    commit('SET_ROUTES', [])
   },
 }
 
