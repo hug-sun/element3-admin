@@ -38,7 +38,7 @@ const roles = [
 module.exports = [
   // mock get all routes form server
   {
-    url: '/element3-admin/routes',
+    url: '/vue-element-admin/routes',
     type: 'get',
     response: _ => {
       return {
@@ -50,7 +50,7 @@ module.exports = [
 
   // mock get all roles form server
   {
-    url: '/element3-admin/roles',
+    url: '/vue-element-admin/roles',
     type: 'get',
     response: _ => {
       return {
@@ -62,7 +62,7 @@ module.exports = [
 
   // add role
   {
-    url: '/element3-admin/role',
+    url: '/vue-element-admin/role',
     type: 'post',
     response: {
       code: 20000,
@@ -74,7 +74,7 @@ module.exports = [
 
   // update role
   {
-    url: '/element3-admin/role/[A-Za-z0-9]',
+    url: '/vue-element-admin/role/[A-Za-z0-9]',
     type: 'put',
     response: {
       code: 20000,
@@ -86,7 +86,7 @@ module.exports = [
 
   // delete role
   {
-    url: '/element3-admin/role/[A-Za-z0-9]',
+    url: '/vue-element-admin/role/[A-Za-z0-9]',
     type: 'delete',
     response: {
       code: 20000,

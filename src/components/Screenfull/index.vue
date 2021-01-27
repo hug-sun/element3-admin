@@ -1,0 +1,63 @@
+<template>
+  <div>
+    <svg-icon :icon-class="isFullscreen?'exit-fullscreen':'fullscreen'" @click="click" />
+  </div>
+</template>
+
+<script>
+import screenfull from 'screenfull'
+// import { useMessage } from 'element3'
+
+// const Message = useMessage()
+
+export default {
+  name: 'Screenfull',
+  data() {
+    return {
+      isFullscreen: false,
+    }
+  },
+  mounted() {
+    this.init()
+  },
+  beforeUnmount() {
+    this.destroy()
+  },
+  methods: {
+    click() {
+      if (!screenfull.isEnabled) {
+        this.$message({
+          message: 'you browser can not work',
+          type: 'warning',
+        })
+        return false
+      }
+      screenfull.toggle()
+    },
+    change() {
+      this.isFullscreen = screenfull.isFullscreen
+    },
+    init() {
+      if (screenfull.isEnabled) {
+        screenfull.on('change', this.change)
+      }
+    },
+    destroy() {
+      if (screenfull.isEnabled) {
+        screenfull.off('change', this.change)
+      }
+    },
+  },
+}
+</script>
+
+<style scoped>
+.screenfull-svg {
+  display: inline-block;
+  cursor: pointer;
+  fill: #5a5e66;;
+  width: 20px;
+  height: 20px;
+  vertical-align: 10px;
+}
+</style>

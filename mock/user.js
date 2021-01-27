@@ -26,7 +26,7 @@ const users = {
 module.exports = [
   // user login
   {
-    url: '/element3-admin/user/login',
+    url: '/vue-element-admin/user/login',
     type: 'post',
     response: config => {
       const { username } = config.body
@@ -49,7 +49,7 @@ module.exports = [
 
   // get user info
   {
-    url: '/element3-admin/user/info\.*',
+    url: '/vue-element-admin/user/info\.*',
     type: 'get',
     response: config => {
       const { token } = config.query
@@ -72,7 +72,7 @@ module.exports = [
 
   // user logout
   {
-    url: '/element3-admin/user/logout',
+    url: '/vue-element-admin/user/logout',
     type: 'post',
     response: _ => {
       return {

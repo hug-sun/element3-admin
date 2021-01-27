@@ -1,6 +1,6 @@
 import router from './router'
 import store from './store'
-import { useMessage } from 'element3'
+// import { useMessage } from 'element3'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken } from '@/utils/auth' // get token from cookie
@@ -9,7 +9,7 @@ import getPageTitle from '@/utils/get-page-title'
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
-const Message = useMessage()
+// const Message = useMessage()
 
 router.beforeEach(async (to, from, next) => {
   // start progress bar
@@ -53,7 +53,7 @@ router.beforeEach(async (to, from, next) => {
           console.log(error)
           // remove token and go to login page to re-login
           await store.dispatch('user/resetToken')
-          Message.error(error || 'Has Error')
+          this.$message.error(error || 'Has Error')
           next(`/login?redirect=${to.path}`)
           NProgress.done()
         }

@@ -2,12 +2,7 @@
   <a v-if="isExternalLink" v-bind="$attrs" :href="to" target="_blank">
     <slot />
   </a>
-  <router-link
-    v-else
-    v-slot="{ isActive, href, navigate }"
-    v-bind="$props"
-    custom
-  >
+  <router-link v-else v-slot="{ isActive, href, navigate }" v-bind="$props" custom>
     <a
       v-bind="$attrs"
       :href="href"

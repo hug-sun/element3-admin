@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       list: null,
-      listLoading: true
+      listLoading: true,
     }
   },
   created() {
@@ -67,10 +67,10 @@ export default {
       const statusMap = {
         published: 'success',
         draft: 'gray',
-        deleted: 'danger'
+        deleted: 'danger',
       }
       return statusMap[status]
-    }
-  }
+    },
+  },
 }
 </script>
